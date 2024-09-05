@@ -13,5 +13,8 @@ def trainerPage(request):
 def whyPage(request):
     return render(request, 'why.html')
 
+def signinPage(request):
+    return render(request, 'sign_in.html')
+
 
 

@@ -1,0 +1,154 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>Neogym</title>
+
+  <!-- slider stylesheet -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}" /> 
+ 
+  <link rel="stylesheet" href="{% static 'css/login.css' %}">
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,600,700&display=swap" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="{% static 'css/style.css' %}" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="{% static 'css/responsive.css' %}" rel="stylesheet" />
+</head>
+
+<body>
+ 
+  <div class="hero_area">
+    <!-- header section starts -->
+    <header class="header_section">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom_nav-container ">
+          <a class="navbar-brand" href="{% url 'index' %}">
+            <!-- Add logo or branding here if needed -->
+          </a>
+          <h4><a class="nav-link" href="{% url 'index' %}" style="color: white;"> <span id="dynamic-text" class="highlight">NEOGYM</span></a></h4>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
+              <ul class="navbar-nav">
+                <li class="nav-item active">
+                  <a class="nav-link" href="{% url 'index' %}">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'why'%}">Why us</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'trainer'%}">Trainers</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'contact'%}">Contact Us</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'sign_in' %}">Login</a>
+                </li>
+              </ul>
+              <div class="user_option">
+                <form class="form-inline my-2 my-lg-0 ml-0 ml-lg-4 mb-3 mb-lg-0">
+                  <button class="btn my-2 my-sm-0 nav_search-btn" type="submit"></button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- header section ends -->
+     <!--login-->
+
+    <div class="login-container">
+      <div class="login-form">
+          <h2>Login</h2>
+          <form method="post">
+              {% csrf_token %}
+              <label for="username">Username</label>
+              <input type="text" id="username" name="username" required>
+              <label for="password">Password</label>
+              <input type="password" id="password" name="password" required>
+              <button type="submit">Login</button>
+          </form>
+      </div>
+  </div>
+
+<!--endlogin-->
+    <!-- footer section -->
+    <footer class="container-fluid footer_section">
+      <p>
+        &copy; 2020 All Rights Reserved. Design by
+        <a href="https://html.design/">Free Html Templates</a>
+      </p>
+    </footer>
+    <!-- footer section ends -->
+
+    <script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.js' %}"></script>
+
+    <script>
+      const words = ["NEOGYM", " NEOGYM"];
+      let index = 0;
+      let charIndex = 0;
+      let isDeleting = false;
+      const textElement = document.getElementById("dynamic-text");
+      const typingSpeed = 100;  // Typing speed (milliseconds)
+      const deletingSpeed = 50; // Deleting speed (milliseconds)
+      const delayBetweenWords = 1000; // Delay before typing the next word
+
+      function type() {
+        const currentWord = words[index];
+        const currentDisplayText = textElement.textContent;
+
+        if (!isDeleting) {
+          // Typing
+          textElement.textContent = currentWord.substring(0, charIndex + 1);
+          charIndex++;
+
+          if (charIndex === currentWord.length) {
+            // When word is fully typed, wait before deleting
+            setTimeout(() => isDeleting = true, delayBetweenWords);
+          }
+        } else {
+          // Deleting
+          textElement.textContent = currentDisplayText.substring(0, charIndex - 1);
+          charIndex--;
+
+          if (charIndex === 0) {
+            // When deletion is complete, move to the next word
+            isDeleting = false;
+            index = (index + 1) % words.length;
+          }
+        }
+
+        setTimeout(type, isDeleting ? deletingSpeed : typingSpeed);
+      }
+
+      // Start typing effect
+      type();
+    </script>
+</body>
+
+</html>
