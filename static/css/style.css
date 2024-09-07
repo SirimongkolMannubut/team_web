@@ -573,6 +573,7 @@ a:focus {
 }
 
 /* footer section*/
+
 .footer_section {
   background-color: #fbfdfd;
   padding: 20px;
@@ -589,5 +590,107 @@ a:focus {
   color: #292929;
 }
 
-/* end footer section*/
-/*# sourceMappingURL=style.css.map */
+/* logนสาขา */
+body {
+  background-image: url("{% static 'images/Com.png' %}");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.main-content {
+  max-width: 90vw; /* ปรับขนาดความกว้างของคอนเทนเนอร์ให้ใกล้เคียงกับความกว้างของหน้าจอ */
+  margin: 0 auto; /* จัดกลางคอนเทนเนอร์แนวนอน */
+  text-align: center; /* จัดกลางเนื้อหาแนวนอน */
+  padding: 59px; /* เพิ่มระยะห่างรอบๆ */
+  box-sizing: border-box; /* รวม padding ในความกว้าง */
+  position: relative; /* กำหนดให้เป็น container สำหรับตำแหน่งที่สัมพันธ์ */
+
+}
+.header_section {
+  background-color: rgba(66, 66, 66, 0.8);
+}
+
+
+.main-content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.centered-image {
+  max-width: 23%; /* ปรับขนาดความกว้างสูงสุดของภาพให้เหมาะสม */
+  height: auto; /* รักษาสัดส่วนของภาพ */
+  display: block; /* ทำให้ภาพเป็นบล็อกเลเยอร์เพื่อให้การจัดกลางทำงานได้ */
+  margin: 0 auto; /* จัดกลางภาพแนวนอน */
+  position: relative; /* กำหนดให้เป็นตำแหน่งสัมพันธ์กับคอนเทนเนอร์ */
+  top: -33px; /* ปรับตำแหน่งภาพขึ้นลง */
+  left: 0; /* ปรับตำแหน่งภาพซ้ายขวา */
+  transform: translateX(11.59%); /* ปรับให้ภาพอยู่กลางคอนเทนเนอร์ */
+
+}
+.main-content {
+  display: flex; /* ใช้ Flexbox */
+  justify-content: center; /* จัดกลางเนื้อหาแนวนอน */
+  align-items: center; /* จัดกลางเนื้อหาแนวตั้ง */
+  flex-direction: column; /* วางเนื้อหาในแนวตั้ง */
+  max-width: 85vw; /* ปรับขนาดความกว้างของคอนเทนเนอร์ให้ใกล้เคียงกับความกว้างของหน้าจอ */
+  margin: 0 auto; /* จัดกลางคอนเทนเนอร์แนวนอน */
+  padding: 17px; /* เพิ่มระยะห่างรอบๆ */
+  box-sizing: border-box; /* รวม padding ในความกว้าง */
+}
+
+.centered-image {
+  max-width: 20%; /* ปรับขนาดความกว้างสูงสุดของภาพให้เหมาะสม */
+  height: auto; /* รักษาสัดส่วนของภาพ */
+}
+
+
+.centered-image {
+  max-width: 20%; /* ปรับขนาดความกว้างสูงสุดของภาพให้เหมาะสม */
+  height: auto; /* รักษาสัดส่วนของภาพ */
+  display: block; /* ทำให้ภาพเป็นบล็อกเลเยอร์เพื่อให้การจัดกลางทำงานได้ */
+  margin: 0 auto; /* จัดกลางภาพแนวนอน */
+  border-radius: 50%; /* ทำให้ภาพเป็นวงกลม */
+  transition: box-shadow 0.3s ease-in-out; /* เพิ่มการเปลี่ยนแปลงนุ่มนวล */
+}
+
+.centered-image:hover {
+  box-shadow: 0 0 200px rgb(252, 45, 252); /* สีส้มคล้ายไฟ */
+}
+
+/* video */
+body {
+  background-image: url("{% static 'images/Com.png' %}");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.video-overlay {
+  display: none; /* เริ่มต้นซ่อนวิดีโอ */
+  position: fixed; /* ทำให้วิดีโอคงที่และครอบคลุมทั้งหน้าจอ */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7); /* พื้นหลังโปร่งใสสีดำ */
+  justify-content: center;
+  align-items: center;
+  z-index: 1920; /* ให้วิดีโออยู่เหนือเนื้อหาอื่น */
+  overflow: hidden; /* ซ่อนการเลื่อน */
+}
+
+.video-overlay video {
+  width: 200%;
+  height: 200%;
+  object-fit: cover; /* ให้วิดีโอครอบคลุมทั้งพื้นที่ */
+}

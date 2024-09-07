@@ -2,6 +2,9 @@ from django.urls import path
 from . import views
 
 urlpatterns =[
+     path('', views.welcomePage, name='index'),  # Add this line
+    path('welcome', views.welcomePage, name='welcome'),
+    
     path('', views.indexPage, name='index'),  # Add this line
     path('index', views.indexPage, name='index'),
     

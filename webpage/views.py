@@ -1,6 +1,7 @@
 from django.shortcuts import render, HttpResponse
 
-
+def welcomePage(request):
+    return render(request, 'welcome.html')
 def indexPage(request):
     return render(request, 'index.html')
 
