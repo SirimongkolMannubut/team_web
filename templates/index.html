@@ -38,10 +38,10 @@
       <div class="container-fluid">
         <nav class="navbar navbar-expand-lg custom_nav-container ">
           <a class="navbar-brand" href="index.html">
-          
+            <span id="dynamic-text" class="highlight">Neogym</span>
              
           </a>
-          <h4><a class="nav-link" href="{% url 'index' %}" style="color: white;">NEOGYM <span class="sr-only">(current)</span></a></h4>
+    
 
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -195,6 +195,48 @@
             </div>
           </div>
           
+
+          <script>
+            const words = ["Neogym", "Neogym"];
+            let index = 0;
+            let charIndex = 0;
+            let isDeleting = false;
+            const textElement = document.getElementById("dynamic-text");
+            const typingSpeed = 100;  // Typing speed (milliseconds)
+            const deletingSpeed = 50; // Deleting speed (milliseconds)
+            const delayBetweenWords = 1000; // Delay before typing the next word
+        
+            function type() {
+              const currentWord = words[index];
+              const currentDisplayText = textElement.textContent;
+        
+              if (!isDeleting) {
+                // Typing
+                textElement.textContent = currentWord.substring(0, charIndex + 1);
+                charIndex++;
+        
+                if (charIndex === currentWord.length) {
+                  // When word is fully typed, wait before deleting
+                  setTimeout(() => isDeleting = true, delayBetweenWords);
+                }
+              } else {
+                // Deleting
+                textElement.textContent = currentDisplayText.substring(0, charIndex - 1);
+                charIndex--;
+        
+                if (charIndex === 0) {
+                  // When deletion is complete, move to the next word
+                  isDeleting = false;
+                  index = (index + 1) % words.length;
+                }
+              }
+        
+              setTimeout(type, isDeleting ? deletingSpeed : typingSpeed);
+            }
+        
+            // Start typing effect
+            type();
+          </script>
 
   <script src="static/js/jquery-3.4.1.min.js"></script>
   <script src="static/js/bootstrap.js"></script>
