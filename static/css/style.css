@@ -601,6 +601,15 @@ body {
   display: flex;
   flex-direction: column;
 }
+
+.transparent-logo {
+  opacity: 0; 
+  position: absolute; 
+  pointer-events: auto;
+  z-index: 10;
+} 
+
+
 .main-content {
   max-width: 90vw; /* ปรับขนาดความกว้างของคอนเทนเนอร์ให้ใกล้เคียงกับความกว้างของหน้าจอ */
   margin: 0 auto; /* จัดกลางคอนเทนเนอร์แนวนอน */
@@ -650,17 +659,30 @@ body {
 
 
 .centered-image {
-  max-width: 20%; /* ปรับขนาดความกว้างสูงสุดของภาพให้เหมาะสม */
-  height: auto; /* รักษาสัดส่วนของภาพ */
-  display: block; /* ทำให้ภาพเป็นบล็อกเลเยอร์เพื่อให้การจัดกลางทำงานได้ */
-  margin: 0 auto; /* จัดกลางภาพแนวนอน */
-  border-radius: 50%; /* ทำให้ภาพเป็นวงกลม */
-  transition: box-shadow 0.3s ease-in-out; /* เพิ่มการเปลี่ยนแปลงนุ่มนวล */
+  max-width: 20%; /* Default size for larger screens */
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 50%;
+  transition: box-shadow 0.3s ease-in-out;
 }
 
 .centered-image:hover {
-  box-shadow: 0 0 200px rgb(252, 45, 252); /* สีส้มคล้ายไฟ */
+  box-shadow: 0 0 200px rgb(252, 45, 252); /* Adds hover effect */
 }
+
+@media (max-width: 768px) { /* For tablets and mobile devices */
+  .centered-image {
+    max-width: 100%; /* Adjust size for smaller screens */
+  }
+}
+
+@media (max-width: 480px) { /* For very small mobile screens */
+  .centered-image {
+    max-width: 100%; /* Further adjustment for smaller phones */
+  }
+}
+
 
 /* video */
 body {

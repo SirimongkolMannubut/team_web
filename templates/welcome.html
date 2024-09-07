@@ -33,7 +33,7 @@
 </head>
 <style>
   body {
-    background-image: url("{% static 'images/Com.png' %}");
+    background-image: url("{% static 'images/_Com1.png' %}");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -87,10 +87,11 @@
       </div>
     </section>
   </div>
+  
   <div class="main-content">
     <!-- Centered Image -->
-    <img src="{% static 'images/output.png' %}" alt="Centered Image" class="centered-image" onclick="playVideo()">
-    
+    <img src="{% static 'images/output.png' %}" alt="Centered Image" class="centered-image transparent-logo" onclick="playVideo()">
+
     <!-- Slider Section -->
     <section class="slider_section position-relative">
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -100,6 +101,7 @@
       </div>
     </section>
   </div>
+  
 
   <!-- Video Overlay -->
   <div class="video-overlay" id="videoOverlay">
