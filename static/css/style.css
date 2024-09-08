@@ -685,38 +685,40 @@ body {
 
 
 /* video */
-body {
-  background-image: url("{% static 'images/Com.png' %}");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-
 .video-overlay {
   display: none; /* เริ่มต้นซ่อนวิดีโอ */
   position: fixed; /* ทำให้วิดีโอคงที่และครอบคลุมทั้งหน้าจอ */
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.7); /* พื้นหลังโปร่งใสสีดำ */
+  width: 100%; /* ครอบคลุมทั้งหน้าจอ */
+  height: 100%; /* ครอบคลุมทั้งหน้าจอ */
+  background: rgba(109, 105, 105, 0.7); /* พื้นหลังโปร่งใสสีดำ */
   justify-content: center;
   align-items: center;
-  z-index: 1920; /* ให้วิดีโออยู่เหนือเนื้อหาอื่น */
+  z-index: 2000; /* ให้วิดีโออยู่เหนือเนื้อหาอื่น */
   overflow: hidden; /* ซ่อนการเลื่อน */
 }
 
 .video-overlay video {
-  width: 200%;
-  height: 200%;
-  object-fit: cover; /* ให้วิดีโอครอบคลุมทั้งพื้นที่ */
-
+  width: 300%; /* ปรับขนาดความกว้างของวิดีโอเป็น 80% ของขนาดหน้าจอ */
+  max-width: 2200px; /* จำกัดความกว้างสูงสุดให้เท่ากับความกว้างของวิดีโอ */
+  height: auto; /* ปรับความสูงให้เหมาะสมกับอัตราส่วนของวิดีโอ */
+  max-height: 2000%; /* จำกัดความสูงสูงสุดเพื่อไม่ให้เกินขอบของหน้าจอ */
+  object-fit: contain; /* ให้วิดีโอปรากฏเต็มพื้นที่ */
 }
+
+.close-btn {
+  position: absolute;
+  top: 0px; /* ระยะห่างจากขอบบนของหน้าจอ */
+  right: 0px; /* ระยะห่างจากขอบขวาของหน้าจอ */
+  background: rgba(255, 255, 255, 0.8); /* พื้นหลังปุ่มปิดโปร่งใสสีขาว */
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 1900; /* ทำให้ปุ่มปิดอยู่เหนือวิดีโอ */
+}
+
+
 /* รูปปกhome */
 .banner-container {
   width: 200; /* Ensure the container takes up full width */
@@ -732,115 +734,3 @@ body {
 }
 
 
-body {
-  background-color: #f8f9fa;
-  font-family: 'Poppins', sans-serif;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-header {
-  background-color: #343a40;
-  padding: 10px;
-}
-
-.navbar-brand {
-  display: flex;
-  align-items: center;
-  color: white;
-}
-
-.navbar-brand span {
-  font-weight: bold;
-  font-size: 20px;
-  color: grey;
-}
-
-.navbar-nav .nav-link {
-  color: white;
-}
-
-.banner-container {
-  position: relative;
-  width: 100%;
-  height: 500px;
-  overflow: hidden;
-}
-
-.banner-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.banner-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-  text-align: center;
-}
-
-.banner-text h1 {
-  font-size: 50px;
-  font-weight: bold;
-}
-
-.banner-text p {
-  font-size: 20px;
-}
-
-.btn {
-  background-color: #ff5722;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  text-transform: uppercase;
-}
-
-.services {
-  text-align: center;
-  padding: 50px 0;
-}
-
-.services h2 {
-  margin-bottom: 30px;
-  font-size: 36px;
-}
-
-.services .service-item {
-  margin-bottom: 20px;
-}
-
-.service-item img {
-  max-width: 100px;
-  margin-bottom: 15px;
-}
-
-footer {
-  background-color: #343a40;
-  color: white;
-  text-align: center;
-  padding: 20px 0;
-  margin-top: auto;
-}
-
-footer p {
-  margin: 0;
-}
-
-/* Responsive styling */
-@media (max-width: 768px) {
-  .banner-text h1 {
-    font-size: 36px;
-  }
-
-  .banner-text p {
-    font-size: 16px;
-  }
-}

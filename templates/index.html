@@ -25,6 +25,8 @@
 
   <link href="{% static 'css/homes.css' %}" rel="stylesheet">
 
+
+  <link href="{% static 'css/videos.css' %}" rel="stylesheet">
  
 </head>
 
@@ -63,29 +65,46 @@
     </div>
   </section>
 
-  <!-- Services section -->
-  <section class="services">
-    <h2>บริการของเรา</h2>
+  <!-- video -->
+  <section class="video-gallery">
+    <h2>วิดีโอของเรา</h2>
     <div class="container">
       <div class="row">
-        <div class="col-lg-4 service-item">
-          <img src="{% static 'images/service1.png' %}" alt="Service 1">
-          <h4>บริการ 1</h4>
-          <p>รายละเอียดของบริการ 1</p>
+        <div class="col-lg-4 video-item">
+          <div class="video-wrapper">
+            <video controls>
+              <source src="{% static 'videos/program1.mp4' %}" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <h4>วิดีโอ 1</h4>
+          <p>การแบ่งกลุ่มฝึกทำงานเป็นทีม</p>
         </div>
-        <div class="col-lg-4 service-item">
-          <img src="{% static 'images/service2.png' %}" alt="Service 2">
-          <h4>บริการ 2</h4>
-          <p>รายละเอียดของบริการ 2</p>
+        <div class="col-lg-4 video-item">
+          <div class="video-wrapper">
+            <video controls>
+              <source src="{% static 'videos/ai.mp4' %}" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <h4>วิดีโอ 2</h4>
+          <p>การใช้ Ai ช่วยทำงาน </p>
         </div>
-        <div class="col-lg-4 service-item">
-          <img src="{% static 'images/service3.png' %}" alt="Service 3">
-          <h4>บริการ 3</h4>
-          <p>รายละเอียดของบริการ 3</p>
+        <div class="col-lg-4 video-item">
+          <div class="video-wrapper">
+            <video controls>
+              <source src="{% static 'videos/claude-ai.mp4' %}" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <h4>วิดีโอ 3</h4>
+          <p>การใช้งาน Claude-Ai </p>
         </div>
       </div>
     </div>
   </section>
+  
+  
 
   <!-- Footer section -->
   <footer>

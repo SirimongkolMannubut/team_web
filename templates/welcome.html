@@ -103,13 +103,16 @@
   </div>
   
 
-  <!-- Video Overlay -->
-  <div class="video-overlay" id="videoOverlay">
-    <video id="promoVideo" controls>
-      <source src="{% static 'videos/wow.mp4' %}" type="video/mp4">
+<!-- Video Overlay -->
+<div class="video-overlay" id="videoOverlay">
+  <video id="promoVideo" controls>
+      <source src="{% static 'videos/load.mp4' %}" type="video/mp4">
       Your browser does not support the video tag.
-    </video>
-  </div>
+  </video>
+  <!-- Optional: Close button -->
+  <button class="close-btn" onclick="closeVideo()">X</button>
+</div>
+
 
   <script>
     const words = [" science", "science"];

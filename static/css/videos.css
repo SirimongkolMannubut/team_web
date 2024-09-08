@@ -1,0 +1,83 @@
+/* videos.css */
+.video-gallery {
+    padding: 50px 0;
+    background-color: #ffffffc7; /* Background color for the entire section */
+    text-align: center;
+}
+  
+.video-gallery h2 {
+    margin-bottom: 30px;
+    font-size: 36px;
+}
+  
+.video-item {
+    margin: 0 auto 30px; /* Center video items horizontally */
+    background-color: #e0e0e0; /* Gray background for the video item */
+    padding: 15px; /* Padding around the video */
+    border-radius: 8px; /* Optional: Rounded corners for a softer look */
+    max-width: 600px; /* Set a max-width for video items */
+    width: 100%; /* Ensure video item does not exceed max-width */
+}
+  
+.video-wrapper {
+    position: relative;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+    overflow: hidden;
+    background-color: #fff; /* Background color for the video area */
+    border-radius: 8px; /* Optional: Rounded corners for the video area */
+}
+  
+.video-wrapper video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+  
+.video-item h4 {
+    margin-top: 10px;
+    font-size: 24px;
+}
+  
+.video-item p {
+    font-size: 16px;
+    color: #666;
+}
+  
+/* Responsive design for smaller screens */
+@media (max-width: 900px) {
+    .video-gallery h2 {
+        font-size: 28px;
+    }
+  
+    .video-item {
+        max-width: 90%; /* Make video item wider on smaller screens */
+    }
+  
+    .video-item h4 {
+        font-size: 20px;
+    }
+  
+    .video-item p {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 600px) {
+    .video-gallery h2 {
+        font-size: 24px;
+    }
+  
+    .video-item {
+        max-width: 100%; /* Full width on very small screens */
+    }
+  
+    .video-item h4 {
+        font-size: 18px;
+    }
+  
+    .video-item p {
+        font-size: 12px;
+    }
+}
