@@ -1,0 +1,151 @@
+/* Basic styling */
+body {
+    background-color: #f8f9fa;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  header {
+    background-color: #343a40;
+    padding: 10px;
+  }
+  
+  .navbar-brand {
+    display: flex;
+    align-items: center;
+    color: white;
+  }
+  
+  .navbar-brand span {
+    font-weight: bold;
+    font-size: 20px;
+    color: grey;
+  }
+  
+  .navbar-nav .nav-link {
+    color: white;
+  }
+  
+  .banner-container {
+    position: relative;
+    width: 100%;
+    height: 400px; /* ลดขนาดบนหน้าจอมือถือ */
+    overflow: hidden;
+  }
+  
+  .banner-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .banner-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+  }
+  
+  .banner-text h1 {
+    font-size: 50px;
+    font-weight: bold;
+  }
+  
+  .banner-text p {
+    font-size: 20px;
+  }
+  
+  .btn {
+    background-color: #ff5722;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-transform: uppercase;
+  }
+  
+  .services {
+    text-align: center;
+    padding: 50px 0;
+  }
+  
+  .services h2 {
+    margin-bottom: 30px;
+    font-size: 36px;
+  }
+  
+  .services .service-item {
+    margin-bottom: 20px;
+  }
+  
+  .service-item img {
+    max-width: 100px;
+    margin-bottom: 15px;
+  }
+  
+  footer {
+    background-color: #343a40;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: auto;
+  }
+  
+  footer p {
+    margin: 0;
+  }
+  
+  /* Responsive styling */
+  
+  /* สำหรับหน้าจอขนาดเล็ก เช่น มือถือ */
+  @media (max-width: 768px) {
+    .banner-container {
+      height: 300px; /* ลดขนาดแบนเนอร์บนหน้าจอมือถือ */
+    }
+  
+    .banner-text h1 {
+      font-size: 28px; /* ขนาดตัวอักษรเล็กลงสำหรับมือถือ */
+    }
+  
+    .banner-text p {
+      font-size: 16px; /* ขนาดตัวอักษรเล็กลงสำหรับมือถือ */
+    }
+  
+    .btn {
+      padding: 8px 16px; /* ปรับขนาดปุ่มสำหรับมือถือ */
+    }
+  
+    .services h2 {
+      font-size: 28px; /* ขนาดตัวอักษรเล็กลง */
+    }
+  
+    .services .service-item img {
+      max-width: 80px; /* ปรับขนาดรูปในส่วนบริการ */
+    }
+  }
+  
+  /* สำหรับหน้าจอขนาดกลาง เช่น แท็บเล็ต */
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .banner-container {
+      height: 350px; /* ปรับขนาดแบนเนอร์สำหรับแท็บเล็ต */
+    }
+  
+    .banner-text h1 {
+      font-size: 40px; /* ขนาดตัวอักษรสำหรับแท็บเล็ต */
+    }
+  
+    .banner-text p {
+      font-size: 18px;
+    }
+  
+    .services h2 {
+      font-size: 32px;
+    }
+  }
+  
