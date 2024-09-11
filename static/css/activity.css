@@ -109,3 +109,46 @@ video {
     height: auto; /* รักษาสัดส่วนของวิดีโอ */
     transition: transform 0.3s ease;
 }
+.activities_section .container .row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .activity_box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .activity_box img, .activity_box video {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .activity_desc.short {
+    flex-grow: 1;
+  }
+  
+  .activity_desc.full {
+    display: none;
+  }
+  
+  .activity_box h4 {
+    margin-top: 15px;
+    margin-bottom: 10px;
+  }
+  
+  .activity_box .read-more {
+    margin-top: auto;
+  }
+  
+  .activity_box.expanded .activity_desc.full {
+    display: block;
+  }
+  
+  .activity_box.expanded .activity_desc.short {
+    display: none;
+  }
+  
