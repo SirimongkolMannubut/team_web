@@ -1,3 +1,4 @@
+/* สไตล์สำหรับส่วนกิจกรรม */
 .activities_section {
     padding: 50px 0;
     text-align: center; /* จัดกึ่งกลางหัวข้อ */
@@ -32,6 +33,7 @@
     transform: scale(1.05); /* ขยายขนาดเล็กน้อยเมื่อวางเมาส์ */
 }
 
+/* สไตล์สำหรับกล่องกิจกรรม */
 .activity_box {
     background-color: #b8b8b8; /* สีพื้นหลังอ่อน ๆ ให้ดูเป็นทางการ */
     border: 2px solid #b8b8b8; /* ขอบสีเทาอ่อน */
@@ -74,22 +76,36 @@
     color: #666; /* สีข้อความ */
 }
 
+/* สไตล์สำหรับเนื้อหาสั้น */
+/* สไตล์สำหรับเนื้อหาสั้น */
 .activity_desc.short {
     display: block;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-  }
-  
-  .activity_desc.full {
-    display: none; /* Hidden by default */
-  }
-  
-  .read-more {
+    max-height: 60px; /* กำหนดความสูงสูงสุดของเนื้อหาสั้น */
+    transition: max-height 0.3s ease;
+}
+
+/* สไตล์สำหรับเนื้อหาที่เต็มรูปแบบ */
+.activity_desc.full {
+    display: none; /* ซ่อนเนื้อหาที่เต็มรูปแบบโดยเริ่มต้น */
+    max-height: none; /* ไม่มีการจำกัดความสูง */
+}
+
+/* สไตล์สำหรับปุ่ม "อ่านเพิ่มเติม" */
+.read-more,
+.read-less {
     display: block;
     margin-top: 10px;
-    color: #007bff; /* Bootstrap link color */
+    color: #007bff; /* สีของลิงก์ตาม Bootstrap */
     cursor: pointer;
     text-decoration: underline;
-  }
-  
+}
+
+/* สไตล์สำหรับวิดีโอให้มีขนาดคงที่ */
+video {
+    max-width: 100%; /* ทำให้วิดีโอไม่ใหญ่เกินขนาดของคอนเทนเนอร์ */
+    height: auto; /* รักษาสัดส่วนของวิดีโอ */
+    transition: transform 0.3s ease;
+}
