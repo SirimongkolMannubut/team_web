@@ -1,13 +1,15 @@
 function toggleContent(element) {
-    const parentBox = element.closest('.activity_box');
-    parentBox.classList.toggle('expanded');
+    const activityBox = element.closest('.activity_box');
+    const shortDesc = activityBox.querySelector('.activity_desc.short');
+    const fullDesc = activityBox.querySelector('.activity_desc.full');
     
-    // Toggle between "Read more" and "Read less"
-    const readMoreLink = parentBox.querySelector('.read-more');
-    if (parentBox.classList.contains('expanded')) {
-      readMoreLink.innerHTML = 'Read less';
+    if (shortDesc.style.display !== 'none') {
+        shortDesc.style.display = 'none';
+        fullDesc.style.display = 'block';
+        element.textContent = 'แสดงน้อยลง';
     } else {
-      readMoreLink.innerHTML = 'Read more';
+        shortDesc.style.display = 'block';
+        fullDesc.style.display = 'none';
+        element.textContent = 'อ่านเพิ่มเติม';
     }
-  }
-  
+}
