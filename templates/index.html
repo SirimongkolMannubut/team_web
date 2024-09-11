@@ -34,28 +34,30 @@
 
   <!-- Header section -->
   <header>
-    <nav class="navbar navbar-expand-lg navbar-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: gray;">
       <div class="container-fluid">
         <a class="navbar-brand" href="{% url 'index' %}">
           <img src="{% static 'images/output.png' %}" alt="Logo" style="width: 40px; height: 40px; margin-left: 5px; margin-right: 5px;" onclick="playVideo()">
-          <span class="highlight" style="color: grey;">computer</span>
-          <span id="dynamic-text" class="highlight" style="color: black; margin-left: 5px;">science</span>
+          <span class="highlight" style="color: white;">COMPUTER</span>
+          <span id="dynamic-text" class="highlight" style="color: black; margin-left: 5px;">SCIENCE</span>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item"><a class="nav-link" href="{% url 'index' %}">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="{% url 'why' %}">กิจกรรม</a></li>
-            <li class="nav-item"><a class="nav-link" href="{% url 'trainer' %}">Admins</a></li>
-            <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">Contact Us</a></li>
-            <li class="nav-item"><a class="nav-link" href="{% url 'sign_in' %}">Login</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'index' %}" style="color: white;">Home</a></li>
+              <li class="nav-item"><a class="nav-link" href="{% url 'why' %}" style="color: white;">กิจกรรม</a></li>
+              <li class="nav-item"><a class="nav-link" href="{% url 'trainer' %}" style="color: white;">Admins</a></li>
+              <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}" style="color: white;">Contact Us</a></li>
+              <li class="nav-item"><a class="nav-link" href="{% url 'info' %}" style="color: white;">ข่าวสาร</a></li>
+              <li class="nav-item"><a class="nav-link" href="{% url 'sign_in' %}" style="color: white;">Login</a></li>
           </ul>
         </div>
       </div>
     </nav>
   </header>
+  
 
   <!-- Banner section -->
   <section class="banner-container">
@@ -110,6 +112,7 @@
   <footer>
     <p>&copy; 2024 Computer Science. All Rights Reserved.</p>
   </footer>
+  
 
   <!-- Scripts -->
    

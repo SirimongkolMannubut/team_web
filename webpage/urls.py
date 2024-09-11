@@ -22,6 +22,7 @@ urlpatterns =[
     # path('sign_in.html/', views.signinPage, name='sign_in'),
     path("sign_in/", views.signinPage, name="sign_in" ),
 
+    path("info/", views.infoPage, name="info" ),
     
 ]
     

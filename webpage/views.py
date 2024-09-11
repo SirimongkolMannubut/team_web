@@ -17,5 +17,8 @@ def whyPage(request):
 def signinPage(request):
     return render(request, 'sign_in.html')
 
+def infoPage(request):
+    return render(request, 'info.html')
+
 
 
