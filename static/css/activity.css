@@ -73,3 +73,23 @@
     font-size: 16px; /* ขนาดฟอนต์ของคำอธิบายกิจกรรม */
     color: #666; /* สีข้อความ */
 }
+
+.activity_desc.short {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  
+  .activity_desc.full {
+    display: none; /* Hidden by default */
+  }
+  
+  .read-more {
+    display: block;
+    margin-top: 10px;
+    color: #007bff; /* Bootstrap link color */
+    cursor: pointer;
+    text-decoration: underline;
+  }
+  
