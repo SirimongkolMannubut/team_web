@@ -1,0 +1,75 @@
+.activities_section {
+    padding: 50px 0;
+    text-align: center; /* จัดกึ่งกลางหัวข้อ */
+}
+
+.activities_section h2 {
+    margin-bottom: 50px; /* เพิ่มระยะห่างจากกล่องกิจกรรม */
+    font-size: 36px; /* ขนาดฟอนต์ของหัวข้อ */
+    font-weight: 700; /* น้ำหนักฟอนต์ให้ดูเป็นทางการ */
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.row {
+    display: flex;
+    justify-content: center; /* จัดแนวกลางในแนวนอน */
+}
+
+.col-md-4 {
+    display: flex;
+    justify-content: center; /* จัดแนวกลางในแนวนอน */
+    align-items: flex-start; /* จัดแนวกลางในแนวตั้งที่จุดเริ่มต้น */
+    margin-bottom: 30px;
+    transition: transform 0.3s ease; /* เพิ่มการเปลี่ยนแปลงขนาด */
+}
+
+.col-md-4:hover {
+    transform: scale(1.05); /* ขยายขนาดเล็กน้อยเมื่อวางเมาส์ */
+}
+
+.activity_box {
+    background-color: #b8b8b8; /* สีพื้นหลังอ่อน ๆ ให้ดูเป็นทางการ */
+    border: 2px solid #b8b8b8; /* ขอบสีเทาอ่อน */
+    border-radius: 8px; /* มุมโค้งมน */
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0px 4px 6px rgba(39, 37, 37, 0.1); /* เงาเบา ๆ ให้ดูมีมิติ */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%; /* ให้กล่องกิจกรรมมีความสูงเต็มที่ */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* เพิ่มการเปลี่ยนแปลงพื้นหลังและเงา */
+}
+
+.activity_box:hover {
+    background-color: #a0a0a0; /* เปลี่ยนสีพื้นหลังเมื่อวางเมาส์ */
+    box-shadow: 0px 8px 12px rgba(39, 37, 37, 0.2); /* เพิ่มเงาให้ลึกขึ้นเมื่อวางเมาส์ */
+}
+
+.activity_box img {
+    max-width: 100%; /* ปรับให้ขนาดรูปภาพไม่เกินขอบของกล่อง */
+    height: auto; /* รักษาอัตราส่วนของภาพ */
+    border-radius: 8px; /* ทำมุมของรูปภาพให้โค้งมน */
+    transition: transform 0.3s ease; /* เพิ่มการเปลี่ยนแปลงขนาดของภาพ */
+}
+
+.activity_box img:hover {
+    transform: scale(1.1); /* ขยายขนาดรูปภาพเล็กน้อยเมื่อวางเมาส์ */
+}
+
+.activity_box h4 {
+    margin-top: 15px; /* เพิ่มระยะห่างจากรูปภาพ */
+    font-size: 18px; /* ขนาดฟอนต์ของหัวข้อ */
+    color: #333; /* สีของหัวข้อ */
+}
+
+.activity_desc {
+    margin-top: 10px; /* ระยะห่างจากหัวข้อ */
+    font-size: 16px; /* ขนาดฟอนต์ของคำอธิบายกิจกรรม */
+    color: #666; /* สีข้อความ */
+}
