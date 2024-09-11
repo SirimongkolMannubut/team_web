@@ -64,42 +64,22 @@
 
   <!-- contact section -->
 
-  <section class="contact_section">
-    <div class="form_container">
-      <div class="row">
-        <div class="col-md-6 px-0">
-          <div class="img-box">
-            <img src="images/contact-img.jpg" alt="">
-          </div>
+  <<section class="contact_lock">
+    <div class="form_lock">
+      <div class="img-box">
+        <img src="{% static 'images/output.png' %}" alt="Logo">
+      </div>
+      <div class="form_container">
+        <div class="heading_container">
+          <h2>ติดต่อ</h2>
         </div>
-        <div class="col-lg-5 col-md-6">
-          <div class="form_container pr-0 pr-lg-5 mr-0 mr-lg-2">
-            <div class="heading_container">
-              <h2>
-                ติดต่อ
-              </h2>
-            </div>
-            <form action="">
-              <div>
-                <input type="text" placeholder="Name" />
-              </div>
-              <div>
-                <input type="email" placeholder="Email" />
-              </div>
-              <div>
-                <input type="text" placeholder="Phone Number" />
-              </div>
-              <div>
-                <input type="text" class="message-box" placeholder="Message" />
-              </div>
-              <div class="d-flex ">
-                <button>
-                  Send
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
+        <form action="">
+          <input type="text" placeholder="Name" />
+          <input type="email" placeholder="Email" />
+          <input type="text" placeholder="Phone Number" />
+          <textarea class="message-box" placeholder="Message"></textarea>
+          <button type="submit">Send</button>
+        </form>
       </div>
     </div>
   </section>
